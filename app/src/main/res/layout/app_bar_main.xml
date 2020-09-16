@@ -39,10 +39,10 @@
             android:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/imageButton8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintHorizontal_bias="0.075"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.633"
+            app:layout_constraintVertical_bias="0.734"
             app:srcCompat="@drawable/food" />
 
         <ImageButton
@@ -53,7 +53,7 @@
             android:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/imageButton9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintHorizontal_bias="0.932"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
