@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import kotlinx.android.synthetic.main.activity_category_ngo.*
 
-class category_ngo : AppCompatActivity() {
+class CategoryNGO : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
 

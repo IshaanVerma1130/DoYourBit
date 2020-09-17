@@ -4,15 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
-import kotlinx.android.synthetic.main.activity_categories_user_main.*
+import kotlinx.android.synthetic.main.activity_category_user.*
 
-class categories_user_main : AppCompatActivity() {
+class CategoryUser : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categories_user_main)
-       // toggle = ActionBarDrawerToggle(this.drawerlayout, R.string.open, R.string.close)
-        drawerlayout.addDrawerListener(toggle)
+        setContentView(R.layout.activity_category_user)
+        toggle = ActionBarDrawerToggle(this, drawerLayout , R.string.open, R.string.close)
+        drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
