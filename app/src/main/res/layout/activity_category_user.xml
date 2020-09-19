@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/wallpaper1">
 
         <TextView
             android:layout_width="match_parent"
@@ -29,26 +30,12 @@
             app:layout_constraintVertical_bias="0.076" />
 
 
-        <ImageButton
-            android:id="@+id/User_food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="196dp"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/User_stationery"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/food" />
-
         <TextView
             android:id="@+id/User_text_food"
             android:layout_width="86dp"
             android:layout_height="26dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-light"
             android:text="Food"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -65,21 +52,37 @@
             android:id="@+id/User_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="196dp"
-            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/button_background3"
             app:layout_constraintBottom_toTopOf="@+id/User_funds"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.926"
+            app:layout_constraintHorizontal_bias="0.935"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/clothes" />
 
+        <ImageButton
+            android:id="@+id/User_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/button_background3"
+            app:layout_constraintBottom_toTopOf="@+id/User_stationery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/food" />
+
         <TextView
             android:id="@+id/User_text_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-light"
             android:text="Clothes"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -94,60 +97,63 @@
             android:id="@+id/User_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            app:srcCompat="@drawable/books"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="90dp"
+            android:background="@drawable/button_background3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.785" />
-
-        <ImageButton
-            android:id="@+id/User_funds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.935"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.785"
-            app:srcCompat="@drawable/funds" />
-
-
-        <TextView
-            android:id="@+id/User_text_stationery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="sans-serif"
-            android:text="Stationery"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/User_stationery"
-            app:layout_constraintStart_toStartOf="@+id/User_stationery"
-            app:layout_constraintTop_toBottomOf="@+id/User_stationery"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.89"
+            app:srcCompat="@drawable/books" />
 
         <TextView
             android:id="@+id/User_text_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-light"
             android:text="Funds"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/User_funds"
-            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="@+id/User_funds"
             app:layout_constraintTop_toBottomOf="@+id/User_funds"
             app:layout_constraintVertical_bias="0.0" />
 
+        <ImageButton
+            android:id="@+id/User_funds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="90dp"
+            android:background="@drawable/button_background3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.935"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.89"
+            app:srcCompat="@drawable/funds" />
+
+        <TextView
+            android:id="@+id/User_text_stationery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Stationery"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/User_stationery"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/User_stationery"
+            app:layout_constraintTop_toBottomOf="@+id/User_stationery"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
