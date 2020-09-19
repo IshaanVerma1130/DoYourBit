@@ -12,12 +12,15 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="true"
             android:text="Donate"
+            android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="bold"
+            android:textSize="50sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -27,12 +30,12 @@
 
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/User_food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="196dp"
             android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+            app:layout_constraintBottom_toTopOf="@+id/User_stationery"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.073"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +44,7 @@
             app:srcCompat="@drawable/food" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/User_text_food"
             android:layout_width="86dp"
             android:layout_height="26dp"
             android:layout_marginTop="5dp"
@@ -51,20 +54,20 @@
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton7"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="@+id/imageButton2"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+            app:layout_constraintBottom_toTopOf="@+id/User_stationery"
+            app:layout_constraintEnd_toEndOf="@+id/User_food"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/User_food"
+            app:layout_constraintTop_toBottomOf="@+id/User_food"
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/User_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="196dp"
             android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton8"
+            app:layout_constraintBottom_toTopOf="@+id/User_funds"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.926"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,22 +76,22 @@
             app:srcCompat="@drawable/clothes" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/User_text_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:text="Clothes"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton6"
-            app:layout_constraintHorizontal_bias="0.538"
-            app:layout_constraintStart_toStartOf="@+id/imageButton6"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton6"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintBottom_toTopOf="@+id/User_funds"
+            app:layout_constraintEnd_toEndOf="@+id/User_clothes"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/User_clothes"
+            app:layout_constraintTop_toBottomOf="@+id/User_clothes"
+            app:layout_constraintVertical_bias="0.058" />
 
         <ImageButton
-            android:id="@+id/imageButton7"
+            android:id="@+id/User_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
@@ -101,7 +104,7 @@
             app:layout_constraintVertical_bias="0.785" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
+            android:id="@+id/User_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
@@ -115,7 +118,7 @@
 
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/User_text_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -124,13 +127,13 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-            app:layout_constraintStart_toStartOf="@+id/imageButton7"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+            app:layout_constraintEnd_toEndOf="@+id/User_stationery"
+            app:layout_constraintStart_toStartOf="@+id/User_stationery"
+            app:layout_constraintTop_toBottomOf="@+id/User_stationery"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/User_text_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -139,10 +142,10 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton8"
+            app:layout_constraintEnd_toEndOf="@+id/User_funds"
             app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="@+id/imageButton8"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+            app:layout_constraintStart_toStartOf="@+id/User_funds"
+            app:layout_constraintTop_toBottomOf="@+id/User_funds"
             app:layout_constraintVertical_bias="0.0" />
 
 
