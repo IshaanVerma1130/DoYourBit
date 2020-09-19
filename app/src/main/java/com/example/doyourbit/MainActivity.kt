@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         handler= Handler()
         handler.postDelayed({
-            val intent = Intent(this, ChoicePage::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000)
