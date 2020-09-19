@@ -18,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/login_edit_background"
-        android:drawableStart="@drawable/ic_baseline_perm_identity_24"
         android:fontFamily="sans-serif-light"
         android:hint="Name"
         android:inputType="textPersonName"
