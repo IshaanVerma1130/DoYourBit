@@ -5,7 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".category_ngo">
+    tools:context=".CategoryNGO">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,10 +14,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="true"
             android:text="Request"
+            android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="40sp"
-            android:textStyle="bold"
+            android:textSize="50sp"
+            android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -26,7 +29,7 @@
             app:layout_constraintVertical_bias="0.076" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/Ngo_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
@@ -39,7 +42,7 @@
             app:srcCompat="@drawable/books" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/Ngo_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
@@ -52,33 +55,33 @@
             app:srcCompat="@drawable/funds" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/Ngo_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.073"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.619"
-            app:srcCompat="@drawable/food" />
-
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+            app:layout_constraintBottom_toTopOf="@+id/Ngo_funds"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.926"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.619"
+            app:layout_constraintVertical_bias="0.632"
             app:srcCompat="@drawable/clothes" />
 
+        <ImageButton
+            android:id="@+id/Ngo_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/Ngo_stationery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.632"
+            app:srcCompat="@drawable/food" />
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/Ngo_text_food"
             android:layout_width="86dp"
             android:layout_height="26dp"
             android:layout_marginTop="4dp"
@@ -86,29 +89,29 @@
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton"
+            app:layout_constraintBottom_toTopOf="@+id/Ngo_stationery"
+            app:layout_constraintEnd_toEndOf="@+id/Ngo_food"
             app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="@+id/imageButton"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton"
+            app:layout_constraintStart_toStartOf="@+id/Ngo_food"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_food"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Ngo_text_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clothes"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton5"
+            app:layout_constraintBottom_toTopOf="@+id/Ngo_funds"
+            app:layout_constraintEnd_toEndOf="@+id/Ngo_clothes"
             app:layout_constraintHorizontal_bias="0.526"
-            app:layout_constraintStart_toStartOf="@+id/imageButton5"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+            app:layout_constraintStart_toStartOf="@+id/Ngo_clothes"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_clothes"
             app:layout_constraintVertical_bias="0.044" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/Ngo_text_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -116,13 +119,13 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-            app:layout_constraintStart_toStartOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+            app:layout_constraintEnd_toEndOf="@+id/Ngo_stationery"
+            app:layout_constraintStart_toStartOf="@+id/Ngo_stationery"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_stationery"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/Ngo_text_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -130,10 +133,10 @@
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton4"
+            app:layout_constraintEnd_toEndOf="@+id/Ngo_funds"
             app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="@+id/imageButton4"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+            app:layout_constraintStart_toStartOf="@+id/Ngo_funds"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_funds"
             app:layout_constraintVertical_bias="0.0" />
 
 

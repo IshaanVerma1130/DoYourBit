@@ -3,9 +3,9 @@ package com.example.doyourbit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Main_Page : AppCompatActivity() {
+class ChoicePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main__page)
+        setContentView(R.layout.activity_choice)
     }
 }
