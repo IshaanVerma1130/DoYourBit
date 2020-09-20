@@ -2,15 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Item1"
+        android:id="@+id/Ngo_cust_care"
         android:title="Customer Care"/>
 
     <item
-        android:id="@+id/Item2"
-        android:title="Feedback"/>
-
-    <item
-        android:id="@+id/Item3"
+        android:id="@+id/Ngo_about"
         android:title="About"/>
 
 </menu>
