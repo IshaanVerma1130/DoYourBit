@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper2"
+
+    tools:context=".Ngo_AboutMe">
+
+    <TextView
+        android:id="@+id/About_NgoName"
+        android:layout_width="243dp"
+        android:layout_height="41dp"
+        android:background="#40D3C5"
+        android:fontFamily="sans-serif-black"
+        android:text="             Name"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="-3dp" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/About_Ngo_profile"
+        app:layout_constraintTop_toBottomOf="@+id/About_name" />
+
+    <ImageView
+        android:id="@+id/About_Ngo_profile"
+        android:layout_width="176dp"
+        android:layout_height="191dp"
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="-9dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/About_NgoInputName"
+        android:layout_width="209dp"
+        android:layout_height="33dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hapticFeedbackEnabled="false"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="92dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/About_Ngo_profile"
+        app:layout_constraintTop_toBottomOf="@+id/About_NgoName" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="168dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/About_NgoLoc"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
+        android:background="#40D3C5"
+        android:fontFamily="sans-serif-black"
+        android:text="           Location"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="133dp" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="116dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/About_Ngo_profile" />
+
+    <TextView
+        android:id="@+id/About_NgoBio"
+        android:layout_width="413dp"
+        android:layout_height="38dp"
+        android:background="#40D3C5"
+        android:fontFamily="sans-serif-black"
+        android:text="                               Bio"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="299dp" />
+
+    <EditText
+        android:id="@+id/About_NgoLocInput"
+        android:layout_width="215dp"
+        android:layout_height="32dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLines="3"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <EditText
+        android:id="@+id/About_NgoBioinput"
+        android:layout_width="215dp"
+        android:layout_height="32dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:inputType="textPersonName"
+        android:maxLines="4"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="501dp" />
+
+    <TextView
+        android:id="@+id/About_NgoContact"
+        android:layout_width="411dp"
+        android:layout_height="38dp"
+        android:background="#40D3C5"
+        android:fontFamily="sans-serif-black"
+        android:text="                     Contact Info"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="502dp" />
+
+    <TextView
+        android:id="@+id/About_NgoPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_contacts_24"
+        android:drawablePadding="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Phone No."
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:id="@+id/About_NgoEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5sp"
+        android:fontFamily="sans-serif-black"
+        android:text="  E-mail"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="648dp" />
+
+    <EditText
+        android:id="@+id/About_NgoPhoneinput"
+        android:layout_width="215dp"
+        android:layout_height="31dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="12dp"
+        android:drawableEnd="12dp"
+        android:ems="10"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <EditText
+        android:id="@+id/About_NgoE-mailInput"
+        android:layout_width="215dp"
+        android:layout_height="31dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="12dp"
+        android:drawableEnd="12dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="646dp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="1dp"
+        android:layout_height="190dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/About_Ngo_profile"
+        tools:layout_editor_absoluteX="169dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

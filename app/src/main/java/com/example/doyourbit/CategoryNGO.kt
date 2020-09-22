@@ -21,17 +21,16 @@ class CategoryNGO : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//        navView.setNavigationItemSelectedListener {
-//            when(it.itemId){
-//                R.id.Item1 -> Toast.makeText(applicationContext,
-//                    "Clicked item 1",Toast.LENGTH_SHORT).show()
-//                R.id.Item2 -> Toast.makeText(applicationContext,
-//                    "Clicked item 2",Toast.LENGTH_SHORT).show()
-//                R.id.Item3 -> Toast.makeText(applicationContext,
-//                    "Clicked item 3",Toast.LENGTH_SHORT).show()
-//            }
-//            true
-//        }
+        navView.setNavigationItemSelectedListener {
+           when(it.itemId){
+                R.id.Ngo_gallery -> Toast.makeText(applicationContext,
+                    "Clicked item 1",Toast.LENGTH_SHORT).show()
+                R.id.Ngo_about -> Toast.makeText(applicationContext,
+                    "Clicked item 2",Toast.LENGTH_SHORT).show()
+                R.id.Ngo_transaction -> Toast.makeText(applicationContext,
+                    "Clicked item 3",Toast.LENGTH_SHORT).show()
+            }
+            true }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

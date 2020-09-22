@@ -2,11 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Ngo_cust_care"
-        android:title="Customer Care"/>
+        android:id="@+id/Ngo_gallery"
+        android:title="My gallery" />
 
     <item
         android:id="@+id/Ngo_about"
-        android:title="About"/>
+        android:title="About me"/>
+
+    <item
+        android:id="@+id/Ngo_transaction"
+        android:title="Payment methods"/>
+
 
 </menu>
