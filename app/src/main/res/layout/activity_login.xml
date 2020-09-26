@@ -57,7 +57,6 @@
         android:layout_gravity="start"
         android:layout_marginTop="80dp"
         android:background="@drawable/button_background1"
-        android:enabled="false"
         android:inputType="textCapSentences"
         android:text="LOGIN"
         android:textColor="#0E0E0E"

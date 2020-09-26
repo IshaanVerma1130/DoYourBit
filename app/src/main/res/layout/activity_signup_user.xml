@@ -88,7 +88,6 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="70dp"
         android:background="@drawable/button_background1"
-        android:enabled="false"
         android:inputType="textCapSentences"
         android:text="SIGN-UP"
         android:textColor="#0E0E0E"

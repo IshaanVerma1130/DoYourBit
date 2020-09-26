@@ -9,6 +9,11 @@ class SignupUser : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup_user)
-        
+
+        val signup = findViewById<Button>(R.id.SignUP_user_button)
+        signup.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

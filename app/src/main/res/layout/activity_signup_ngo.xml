@@ -120,7 +120,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:background="@drawable/button_background1"
-        android:enabled="false"
         android:inputType="textCapSentences"
         android:text="SIGN-UP"
         android:textColor="#0E0E0E"
