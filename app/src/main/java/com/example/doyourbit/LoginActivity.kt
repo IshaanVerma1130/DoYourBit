@@ -6,8 +6,18 @@ import android.widget.Button
 import android.content.Intent
 import android.view.View
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_signup_user.*
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import java.io.IOException
+import kotlin.math.sign
 
 class LoginActivity : AppCompatActivity() {
+
+    val JSON = "application/json; charset=utf-8".toMediaType()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +29,62 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val login = findViewById<Button>(R.id.Login_button)
+        login.setOnClickListener {
 
+            val email = Login_user_email.text.toString()
+            val password = Login_user_pass.text.toString()
+
+            val postBody = """ {"email": "$email", "password": "$password"} """
+
+            val client = OkHttpClient()
+            val request = Request.Builder().url(Config().LOGIN).post(postBody.toRequestBody(JSON)).build()
+
+            client.newCall(request).enqueue(object : Callback {
+                override fun onResponse(call: Call, response: Response) {
+                    val bodyString = response.body?.string()
+                    //    println(bodyString)
+                    val body = JSONObject(bodyString)
+
+                    // Update UI on Main thread!
+                    runOnUiThread(object : Runnable {
+                        override fun run() {
+                            if (response.code != 200) {
+                                val errors = body.getJSONArray("errors")
+                                val err: JSONObject = errors[0] as JSONObject
+                                Toast.makeText(
+                                    applicationContext,
+                                    err.getString("msg"),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            else {
+//                                println("Signed up!")
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Success!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                if(body.getString("type") == "ngo") {
+                                    Config().N_ID = body.getString("n_id")
+                                    val intent = Intent(applicationContext, CategoryNGO::class.java)
+                                    startActivity(intent)
+                                }
+
+                                else if(body.getString("type") == "user") {
+                                    Config().N_ID = body.getString("u_id")
+                                    val intent = Intent(applicationContext, CategoryUser::class.java)
+                                    startActivity(intent)
+                                }
+                            }
+                        }
+                    })
+                }
+                override fun onFailure(call: Call, e: IOException) {
+                    call.cancel()
+                }
+            })
+        }
     }
 }

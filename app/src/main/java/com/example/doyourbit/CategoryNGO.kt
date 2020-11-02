@@ -27,7 +27,7 @@ class CategoryNGO : AppCompatActivity() {
 
         val clothes = findViewById<ImageButton>(R.id.Ngo_clothes)
         clothes.setOnClickListener {
-            it.alpha = 0.0F
+            Toast.makeText(this, "Please add something to search.", Toast.LENGTH_SHORT).show()
         }
 
         val food = findViewById<ImageButton>(R.id.Ngo_food)
