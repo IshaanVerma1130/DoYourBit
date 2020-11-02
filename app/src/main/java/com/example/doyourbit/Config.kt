@@ -11,4 +11,5 @@ public class Config {
 
     var N_ID = ""
     var U_ID = ""
+    var TYPE = ""
 }

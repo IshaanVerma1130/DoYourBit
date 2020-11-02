@@ -1,5 +1,6 @@
 package com.example.doyourbit
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,68 +24,87 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val signup = findViewById<Button>(R.id.Login_signup_button)
-        signup.setOnClickListener{
-            val intent = Intent(this, ChoicePage::class.java)
+        val sp = getSharedPreferences("Info", Context.MODE_PRIVATE)
+
+        if (sp.getString("type", "") == "ngo" && sp.getBoolean("logged", false)) {
+            val intent = Intent(applicationContext, CategoryNGO::class.java)
             startActivity(intent)
-        }
+            finish()
 
-        val login = findViewById<Button>(R.id.Login_button)
-        login.setOnClickListener {
+        } else if (sp.getString("type", "") == "user" && sp.getBoolean("logged", false)) {
+            val intent = Intent(applicationContext, CategoryUser::class.java)
+            startActivity(intent)
+            finish()
+        } else {
 
-            val email = Login_user_email.text.toString()
-            val password = Login_user_pass.text.toString()
+            val signup = findViewById<Button>(R.id.Login_signup_button)
+            signup.setOnClickListener {
+                val intent = Intent(this, ChoicePage::class.java)
+                startActivity(intent)
+            }
 
-            val postBody = """ {"email": "$email", "password": "$password"} """
+            val login = findViewById<Button>(R.id.Login_button)
+            login.setOnClickListener {
 
-            val client = OkHttpClient()
-            val request = Request.Builder().url(Config().LOGIN).post(postBody.toRequestBody(JSON)).build()
 
-            client.newCall(request).enqueue(object : Callback {
-                override fun onResponse(call: Call, response: Response) {
-                    val bodyString = response.body?.string()
-                    //    println(bodyString)
-                    val body = JSONObject(bodyString)
+                val email = Login_user_email.text.toString()
+                val password = Login_user_pass.text.toString()
 
-                    // Update UI on Main thread!
-                    runOnUiThread(object : Runnable {
-                        override fun run() {
-                            if (response.code != 200) {
-                                val errors = body.getJSONArray("errors")
-                                val err: JSONObject = errors[0] as JSONObject
-                                Toast.makeText(
-                                    applicationContext,
-                                    err.getString("msg"),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                            else {
+                val postBody = """ {"email": "$email", "password": "$password"} """
+
+                val client = OkHttpClient()
+                val request =
+                    Request.Builder().url(Config().LOGIN).post(postBody.toRequestBody(JSON)).build()
+
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onResponse(call: Call, response: Response) {
+                        val bodyString = response.body?.string()
+                        //    println(bodyString)
+                        val body = JSONObject(bodyString)
+
+                        // Update UI on Main thread!
+                        runOnUiThread(object : Runnable {
+                            override fun run() {
+                                if (response.code != 200) {
+                                    val errors = body.getJSONArray("errors")
+                                    val err: JSONObject = errors[0] as JSONObject
+                                    Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
+                                } else {
 //                                println("Signed up!")
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Success!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                    Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
 
-                                if(body.getString("type") == "ngo") {
-                                    Config().N_ID = body.getString("n_id")
-                                    val intent = Intent(applicationContext, CategoryNGO::class.java)
-                                    startActivity(intent)
-                                }
+                                    if (body.getString("type") == "ngo") {
+                                        Config().N_ID = body.getString("n_id")
+                                        Config().TYPE = body.getString("type")
+                                        Config().U_ID = ""
 
-                                else if(body.getString("type") == "user") {
-                                    Config().N_ID = body.getString("u_id")
-                                    val intent = Intent(applicationContext, CategoryUser::class.java)
-                                    startActivity(intent)
+                                        sp.edit().putString("type", "ngo").apply()
+                                        sp.edit().putBoolean("logged", true).apply()
+                                        val intent = Intent(applicationContext, CategoryNGO::class.java)
+                                        startActivity(intent)
+                                        finish()
+
+                                    } else if (body.getString("type") == "user") {
+                                        Config().N_ID = body.getString("u_id")
+                                        Config().TYPE = body.getString("type")
+                                        Config().N_ID = ""
+
+                                        sp.edit().putString("type", "user").apply()
+                                        sp.edit().putBoolean("logged", true).apply()
+                                        val intent = Intent(applicationContext, CategoryUser::class.java)
+                                        startActivity(intent)
+                                        finish()
+                                    }
                                 }
                             }
-                        }
-                    })
-                }
-                override fun onFailure(call: Call, e: IOException) {
-                    call.cancel()
-                }
-            })
+                        })
+                    }
+
+                    override fun onFailure(call: Call, e: IOException) {
+                        call.cancel()
+                    }
+                })
+            }
         }
     }
 }
