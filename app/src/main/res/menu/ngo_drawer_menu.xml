@@ -12,6 +12,8 @@
     <item
         android:id="@+id/Ngo_transaction"
         android:title="Payment methods"/>
-
+    <item
+        android:id="@+id/Ngo_logout"
+        android:title="Logout"/>
 
 </menu>
