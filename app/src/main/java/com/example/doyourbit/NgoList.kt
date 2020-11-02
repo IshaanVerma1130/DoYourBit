@@ -13,4 +13,9 @@ class NgoList : AppCompatActivity() {
         recyclerView_NgoList.layoutManager = LinearLayoutManager(this)
         recyclerView_NgoList.adapter = NgoList_Adapter()
     }
+
+//    fun fetchJson() {
+//
+//    }
+
 }
