@@ -53,11 +53,7 @@ class SignupUser : AppCompatActivity() {
                                 if (response.code != 200) {
                                     val errors = body.getJSONArray("errors")
                                     val err: JSONObject = errors[0] as JSONObject
-                                    Toast.makeText(
-                                        applicationContext,
-                                        err.getString("msg"),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
                                 } else {
                                     println("Signed up!")
                                     Toast.makeText(

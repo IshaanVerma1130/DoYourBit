@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                                         finish()
 
                                     } else if (body.getString("type") == "user") {
-                                        Config().N_ID = body.getString("u_id")
+                                        Config().U_ID = body.getString("u_id")
                                         Config().TYPE = body.getString("type")
                                         Config().N_ID = ""
 
