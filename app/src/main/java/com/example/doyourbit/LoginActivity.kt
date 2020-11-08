@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val sp = getSharedPreferences("Info", MODE_PRIVATE)
+        val sp = getSharedPreferences("Info", Context.MODE_PRIVATE)
 
         if (sp.getString("type", "") == "ngo" && sp.getBoolean("logged", false)) {
             val intent = Intent(applicationContext, CategoryNGO::class.java)
@@ -60,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
                         val bodyString = response.body?.string()
-                        //    println(bodyString)
                         val body = JSONObject(bodyString)
 
                         // Update UI on Main thread!
@@ -69,37 +68,41 @@ class LoginActivity : AppCompatActivity() {
                                 if (response.code != 200) {
                                     val errors = body.getJSONArray("errors")
                                     val err: JSONObject = errors[0] as JSONObject
-                                    Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        applicationContext,
+                                        err.getString("msg"),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 } else {
-//                                println("Signed up!")
-                                    Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
+
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Success!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
                                     if (body.getString("type") == "ngo") {
-                                        Config.N_ID = body.getString("n_id")
-//                                        print("n_id:"+Config.N_ID)
-                                        Config.TYPE = body.getString("type")
-                                        Config.U_ID = ""
-                                        Config.N_NAME = body.getString("n_name")
 
                                         sp.edit().putString("type", "ngo").apply()
                                         sp.edit().putBoolean("logged", true).apply()
-//                                        sp.edit().putString("n_name", body.getString("n_name")).apply()
-//                                        sp.edit().putString("n_id", body.getString("n_id")).apply()
-                                        val intent = Intent(applicationContext, CategoryNGO::class.java)
+                                        sp.edit().putString("n_name", body.getString("n_name"))
+                                            .apply()
+                                        sp.edit().putString("n_id", body.getString("n_id")).apply()
+
+                                        val intent =
+                                            Intent(applicationContext, CategoryNGO::class.java)
                                         startActivity(intent)
                                         finish()
 
                                     } else if (body.getString("type") == "user") {
-                                        Config.U_ID = body.getString("u_id")
-                                        Config.TYPE = body.getString("type")
-                                        Config.N_ID = ""
-                                        Config.U_NAME = body.getString("u_name")
 
                                         sp.edit().putString("type", "user").apply()
                                         sp.edit().putBoolean("logged", true).apply()
-//                                        sp.edit().putString("u_name", body.getString("u_name")).apply()
+                                        sp.edit().putString("u_name", body.getString("u_name"))
+                                            .apply()
 
-                                        val intent = Intent(applicationContext, CategoryUser::class.java)
+                                        val intent =
+                                            Intent(applicationContext, CategoryUser::class.java)
                                         startActivity(intent)
                                         finish()
                                     }

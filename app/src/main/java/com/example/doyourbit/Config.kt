@@ -11,12 +11,6 @@ public class Config {
         val USER_DONATE = "$BASE_URL/donate/"
         val NGO_UPDATE_ABOUT = "$BASE_URL/update/ngo/about"
 
-        var N_ID = ""
-        var U_ID = ""
-        var TYPE = ""
-        var N_NAME = ""
-        var U_NAME = ""
-
         var nameList = ArrayList<String>()
         var addressList = ArrayList<String>()
         var phoneList = ArrayList<String>()

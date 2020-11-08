@@ -26,13 +26,11 @@ class CategoryUser : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     var id = 0
 
-//    val sp = getSharedPreferences("Info", 0)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_user)
 
-        toggle = ActionBarDrawerToggle(this, drawerLayout , R.string.open, R.string.close)
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -49,9 +47,11 @@ class CategoryUser : AppCompatActivity() {
 //            }
 //            true }
 
+        val sp = getSharedPreferences("Info", Context.MODE_PRIVATE)
+
         // update user name in nav drawer
         val view = User_navView.getHeaderView(0)
-        view.user_header_name.text = Config.U_NAME//  sp.getString("u_name", "")
+        view.user_header_name.text = sp.getString("u_name", "")
 
         // button for clothes
         val clothes = findViewById<ImageButton>(R.id.User_clothes)
@@ -62,35 +62,35 @@ class CategoryUser : AppCompatActivity() {
 
         // button for food
         val food = findViewById<ImageButton>(R.id.User_food)
-        food.setOnClickListener{
+        food.setOnClickListener {
             id = 2
             clicked()
         }
 
         // button for funds
         val funds = findViewById<ImageButton>(R.id.User_funds)
-        funds.setOnClickListener{
+        funds.setOnClickListener {
             id = 3
             clicked()
         }
 
         // button for stationery
         val stationery = findViewById<ImageButton>(R.id.User_stationery)
-        stationery.setOnClickListener{
+        stationery.setOnClickListener {
             id = 4
             clicked()
         }
 
     }
 
-    fun clicked(){
+    fun clicked() {
 
         val url = Config.USER_DONATE + id.toString()
 
         val client = OkHttpClient()
         val request = Request.Builder().url(url).build()
 
-        client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 val bodyString = response.body?.string()
                 val body = JSONObject(bodyString)
@@ -100,21 +100,22 @@ class CategoryUser : AppCompatActivity() {
                         if (response.code != 200) {
                             val errors = body.getJSONArray("errors")
                             val err: JSONObject = errors[0] as JSONObject
-                            Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                applicationContext,
+                                err.getString("msg"),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
                             val ngos = body.getJSONArray("ngo")
                             var name = ArrayList<String>()
                             var address = ArrayList<String>()
                             var phone = ArrayList<String>()
 
-                            for (i in 0..(ngos.length() - 1)){
+                            for (i in 0..(ngos.length() - 1)) {
 
                                 name.add(ngos.getJSONObject(i).getString("n_name").toString())
-//                                Log.d("name", ngos.getJSONObject(i).getString("n_name").toString())
                                 address.add(ngos.getJSONObject(i).getString("address").toString())
-//                                Log.d("name", ngos.getJSONObject(i).getString("address").toString())
                                 phone.add(ngos.getJSONObject(i).getString("phone").toString())
-//                                Log.d("name", ngos.getJSONObject(i).getString("phone").toString())
                             }
 
                             Config.nameList = name
@@ -138,12 +139,11 @@ class CategoryUser : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        if(toggle.onOptionsItemSelected(item))
-        {
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
 
         return super.onOptionsItemSelected(item)
     }
 
-    }
+}
