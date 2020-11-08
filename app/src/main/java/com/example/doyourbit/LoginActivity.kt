@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_signup_user.*
@@ -54,12 +55,11 @@ class LoginActivity : AppCompatActivity() {
 
                 val client = OkHttpClient()
                 val request =
-                    Request.Builder().url(Config().LOGIN).post(postBody.toRequestBody(JSON)).build()
+                    Request.Builder().url(Config.LOGIN).post(postBody.toRequestBody(JSON)).build()
 
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
                         val bodyString = response.body?.string()
-                        //    println(bodyString)
                         val body = JSONObject(bodyString)
 
                         // Update UI on Main thread!
@@ -68,30 +68,41 @@ class LoginActivity : AppCompatActivity() {
                                 if (response.code != 200) {
                                     val errors = body.getJSONArray("errors")
                                     val err: JSONObject = errors[0] as JSONObject
-                                    Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        applicationContext,
+                                        err.getString("msg"),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 } else {
-//                                println("Signed up!")
-                                    Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
+
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Success!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
                                     if (body.getString("type") == "ngo") {
-                                        Config().N_ID = body.getString("n_id")
-                                        Config().TYPE = body.getString("type")
-                                        Config().U_ID = ""
 
                                         sp.edit().putString("type", "ngo").apply()
                                         sp.edit().putBoolean("logged", true).apply()
-                                        val intent = Intent(applicationContext, CategoryNGO::class.java)
+                                        sp.edit().putString("n_name", body.getString("n_name"))
+                                            .apply()
+                                        sp.edit().putString("n_id", body.getString("n_id")).apply()
+
+                                        val intent =
+                                            Intent(applicationContext, CategoryNGO::class.java)
                                         startActivity(intent)
                                         finish()
 
                                     } else if (body.getString("type") == "user") {
-                                        Config().N_ID = body.getString("u_id")
-                                        Config().TYPE = body.getString("type")
-                                        Config().N_ID = ""
 
                                         sp.edit().putString("type", "user").apply()
                                         sp.edit().putBoolean("logged", true).apply()
-                                        val intent = Intent(applicationContext, CategoryUser::class.java)
+                                        sp.edit().putString("u_name", body.getString("u_name"))
+                                            .apply()
+
+                                        val intent =
+                                            Intent(applicationContext, CategoryUser::class.java)
                                         startActivity(intent)
                                         finish()
                                     }

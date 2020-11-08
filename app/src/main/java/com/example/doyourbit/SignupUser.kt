@@ -39,7 +39,7 @@ class SignupUser : AppCompatActivity() {
                 val postBody = """ {"name": "$name", "email": "$email", "password": "$password"} """
 
                 val client = OkHttpClient()
-                val request = Request.Builder().url(Config().USER_SIGNUP).post(postBody.toRequestBody(JSON)).build()
+                val request = Request.Builder().url(Config.USER_SIGNUP).post(postBody.toRequestBody(JSON)).build()
 
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {
@@ -53,11 +53,7 @@ class SignupUser : AppCompatActivity() {
                                 if (response.code != 200) {
                                     val errors = body.getJSONArray("errors")
                                     val err: JSONObject = errors[0] as JSONObject
-                                    Toast.makeText(
-                                        applicationContext,
-                                        err.getString("msg"),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    Toast.makeText(applicationContext, err.getString("msg"), Toast.LENGTH_SHORT).show()
                                 } else {
                                     println("Signed up!")
                                     Toast.makeText(
