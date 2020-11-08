@@ -13,8 +13,10 @@
         android:background="@drawable/wallpaper4">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/montserrat_bold"
             android:includeFontPadding="true"
             android:text="Request"
@@ -24,31 +26,31 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.076" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/Ngo_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="90dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="70dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.935"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.898"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_text_clothes"
+            app:layout_constraintVertical_bias="0.497"
             app:srcCompat="@drawable/funds" />
 
         <TextView
             android:id="@+id/Ngo_text_funds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="45dp"
             android:fontFamily="sans-serif-light"
             android:includeFontPadding="true"
             android:text="Funds"
@@ -64,53 +66,51 @@
         <ImageButton
             android:id="@+id/Ngo_clothes"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginTop="180dp"
-            android:layout_marginEnd="12dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="28dp"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@+id/Ngo_funds"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.935"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:srcCompat="@drawable/clothes" />
 
         <ImageButton
             android:id="@+id/Ngo_food"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="30dp"
             android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@+id/Ngo_stationery"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintEnd_toStartOf="@+id/Ngo_clothes"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:srcCompat="@drawable/food" />
 
         <ImageButton
             android:id="@+id/Ngo_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="90dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="70dp"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintEnd_toStartOf="@+id/Ngo_funds"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.898"
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_text_food"
+            app:layout_constraintVertical_bias="0.506"
             app:srcCompat="@drawable/books" />
 
         <TextView
             android:id="@+id/Ngo_text_stationery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="45dp"
             android:fontFamily="sans-serif-light"
             android:includeFontPadding="true"
             android:text="Stationery"
@@ -127,34 +127,32 @@
             android:id="@+id/Ngo_text_food"
             android:layout_width="86dp"
             android:layout_height="26dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-light"
             android:includeFontPadding="true"
             android:text="Food"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/Ngo_stationery"
             app:layout_constraintEnd_toEndOf="@+id/Ngo_food"
+            app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toStartOf="@+id/Ngo_food"
-            app:layout_constraintTop_toBottomOf="@+id/Ngo_food"
-            app:layout_constraintVertical_bias="0.012" />
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_food" />
 
         <TextView
             android:id="@+id/Ngo_text_clothes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-light"
             android:includeFontPadding="true"
             android:text="Clothes"
             android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/Ngo_funds"
             app:layout_constraintEnd_toEndOf="@+id/Ngo_clothes"
-            app:layout_constraintHorizontal_bias="0.557"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@+id/Ngo_clothes"
-            app:layout_constraintTop_toBottomOf="@+id/Ngo_clothes"
-            app:layout_constraintVertical_bias="0.042" />
+            app:layout_constraintTop_toBottomOf="@+id/Ngo_clothes" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
