@@ -8,8 +8,9 @@ import kotlinx.android.synthetic.main.ngo_list_row.view.*
 
 class NgoList_Adapter: RecyclerView.Adapter<CustomViewHolder>() {
 
-    val ngoNames = listOf<String>("Ngo1", "Ngo2", "Ngo3")
-    val ngoAddresses = listOf<String>("Address1", "Address2", "Address3")
+    val ngoNames = Config.nameList
+    val ngoAddresses = Config.addressList
+    val ngoPhone = Config.phoneList
 
     override fun getItemCount(): Int {
         return ngoNames.size
@@ -24,8 +25,10 @@ class NgoList_Adapter: RecyclerView.Adapter<CustomViewHolder>() {
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val ngoName = ngoNames.get(position)
         val ngoAddress = ngoAddresses.get(position)
+        val ngoPhone = ngoPhone.get(position)
         holder.itemView.Name.text = ngoName
         holder.itemView.Address.text = ngoAddress
+        holder.itemView.Phone.text = ngoPhone
     }
 }
 

@@ -39,7 +39,7 @@ class SignupUser : AppCompatActivity() {
                 val postBody = """ {"name": "$name", "email": "$email", "password": "$password"} """
 
                 val client = OkHttpClient()
-                val request = Request.Builder().url(Config().USER_SIGNUP).post(postBody.toRequestBody(JSON)).build()
+                val request = Request.Builder().url(Config.USER_SIGNUP).post(postBody.toRequestBody(JSON)).build()
 
                 client.newCall(request).enqueue(object : Callback {
                     override fun onResponse(call: Call, response: Response) {

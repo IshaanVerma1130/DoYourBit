@@ -7,13 +7,19 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="139dp"
         android:padding="8dp">
 
         <TextView
             android:id="@+id/Name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:text="Line 1"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -21,11 +27,31 @@
 
         <TextView
             android:id="@+id/Address"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/Name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Line 2" />
+            android:layout_marginEnd="8dp"
+            android:text="Line 2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Address"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:text="Line 3" />
 
     </RelativeLayout>
 
