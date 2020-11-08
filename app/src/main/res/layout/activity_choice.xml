@@ -4,29 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_final"
+    android:background="@drawable/choice_page"
     tools:context=".ChoicePage">
 
     <Button
         android:id="@+id/Choice_ngo"
-        android:layout_width="131dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="244dp"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginTop="184dp"
+        android:backgroundTint="#234281"
         android:text="NGO"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/Choice_user"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/Choice_user"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Choice_user"
-        android:layout_width="131dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="280dp"
+        android:backgroundTint="#234281"
         android:text="DONOR"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Choice_ngo"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.448" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:includeFontPadding="true"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="normal"
+        android:text="Continue As"
+        app:layout_constraintBottom_toTopOf="@+id/Choice_ngo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

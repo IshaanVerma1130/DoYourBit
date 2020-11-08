@@ -25,7 +25,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo" />
@@ -43,7 +43,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_name" />
@@ -61,7 +61,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_email" />
@@ -79,7 +79,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_pass" />
@@ -97,7 +97,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_cnfpass" />
@@ -115,7 +115,7 @@
         android:paddingStart="15dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_phone" />
@@ -123,19 +123,22 @@
     <Button
         android:id="@+id/SignUP_ngo_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_gravity="start"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/montserrat_bold"
         android:background="@drawable/button_background1"
         android:inputType="textCapSentences"
         android:text="SIGN-UP"
-        android:textColor="#0E0E0E"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUP_ngo_address"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <TextView
         android:id="@+id/SignUP_ngo"
