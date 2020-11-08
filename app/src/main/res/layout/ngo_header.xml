@@ -15,7 +15,7 @@
         android:paddingLeft="15dp"
         android:text=""
         android:textAlignment="textStart"
-        android:textSize="45sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
