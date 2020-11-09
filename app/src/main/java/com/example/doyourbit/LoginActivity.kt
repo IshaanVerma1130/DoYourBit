@@ -85,8 +85,9 @@ class LoginActivity : AppCompatActivity() {
 
                                         sp.edit().putString("type", "ngo").apply()
                                         sp.edit().putBoolean("logged", true).apply()
-                                        sp.edit().putString("n_name", body.getString("n_name"))
-                                            .apply()
+                                        sp.edit().putString("n_name", body.getString("n_name")).apply()
+                                        sp.edit().putString("n_address", body.getString("address")).apply()
+                                        sp.edit().putString("n_about", body.getString("about")).apply()
                                         sp.edit().putString("n_id", body.getString("n_id")).apply()
 
                                         val intent =

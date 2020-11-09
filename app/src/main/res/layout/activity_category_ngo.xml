@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Ngo_text_clothes"
-            app:layout_constraintVertical_bias="0.47"
+            app:layout_constraintVertical_bias="0.481"
             app:srcCompat="@drawable/funds" />
 
         <TextView
