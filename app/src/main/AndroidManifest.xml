@@ -22,7 +22,9 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Ngo_AboutMe">
+        <activity android:name=".Ngo_AboutMe"
+            android:theme="@style/AppTheme.NoActionBar">
+
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
