@@ -11,6 +11,9 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_category_user.*
 import kotlinx.android.synthetic.main.user_header.view.*
 import okhttp3.*
@@ -25,27 +28,20 @@ class CategoryUser : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
     var id = 0
+    lateinit var User_drawer: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_user)
 
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        drawerLayout.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this, User_drawerLayout, R.string.open, R.string.close)
+        User_drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//        navView.setNavigationItemSelectedListener {
-//           when(it.itemId){
-//                R.id.Ngo_gallery -> Toast.makeText(applicationContext,
-//                    "Clicked item 1",Toast.LENGTH_SHORT).show()
-//                R.id.Ngo_about -> Toast.makeText(applicationContext,
-//                    "Clicked item 2",Toast.LENGTH_SHORT).show()
-//                R.id.Ngo_transaction -> Toast.makeText(applicationContext,
-//                    "Clicked item 3",Toast.LENGTH_SHORT).show()
-//            }
-//            true }
+        User_drawer = findViewById(R.id.User_drawerLayout)
+        val User_navView = findViewById<NavigationView>(R.id.User_navView)
 
         val sp = getSharedPreferences("Info", Context.MODE_PRIVATE)
 
@@ -81,6 +77,34 @@ class CategoryUser : AppCompatActivity() {
             clicked()
         }
 
+        User_navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { menuItem ->
+            val id = menuItem.itemId
+            when (id) {
+//                R.id.User_cust_care -> {
+//
+//                }
+                R.id.User_about -> {
+                    val intent = Intent(this, About_Us::class.java)
+                    startActivity(intent)
+                }
+                R.id.User_logout -> {
+                    sp.edit().clear().apply()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            false
+        })
+
+    }
+
+    override fun onBackPressed() {
+        if (User_drawer.isDrawerOpen(GravityCompat.START)){
+            User_drawer.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     fun clicked() {

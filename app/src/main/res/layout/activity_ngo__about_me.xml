@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper2"
+    android:layout_width="match_parent"
+    android:background="@drawable/wallpaper2">
 
+   <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Ngo_AboutMe">
 
     <TextView
@@ -21,29 +24,30 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/About_NgoInputName"
-        android:layout_width="251dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
         android:hapticFeedbackEnabled="false"
-        android:inputType="textPersonName"
         android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/About_NgoName"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/About_NgoName" />
 
     <TextView
-        android:id="@+id/About_NgoLoc"
+        android:id="@+id/About_NgoAddress"
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:background="#40D3C5"
         android:fontFamily="@font/roboto_slab_bold"
-        android:text="Location"
+        android:text="Address"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,41 +68,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/About_NgoLocInput" />
+        app:layout_constraintTop_toBottomOf="@+id/update_address" />
 
-    <EditText
-        android:id="@+id/About_NgoLocInput"
+    <TextView
+        android:id="@+id/About_NgoAddressInput"
         android:layout_width="match_parent"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_height="74dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:maxLines="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/About_NgoLoc" />
+        app:layout_constraintTop_toBottomOf="@+id/About_NgoAddress" />
 
-    <EditText
-        android:id="@+id/About_NgoBioinput"
+    <TextView
+        android:id="@+id/About_NgoAboutInput"
         android:layout_width="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
         android:fontFamily="sans-serif"
-        android:inputType="textPersonName"
-        android:maxLines="4"
-        android:textSize="18sp"
+        android:maxLines="6"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/About_NgoBio" />
@@ -116,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/About_NgoBioinput" />
+        app:layout_constraintTop_toBottomOf="@+id/update_about" />
 
     <TextView
         android:id="@+id/About_NgoPhone"
@@ -151,36 +152,38 @@
         app:layout_constraintTop_toBottomOf="@+id/About_NgoPhone"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
+    <TextView
         android:id="@+id/About_NgoPhoneInput"
         android:layout_width="215dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/About_NgoPhone"
         app:layout_constraintTop_toBottomOf="@+id/About_NgoContact" />
 
-    <EditText
+    <TextView
         android:id="@+id/About_NgoEmailInput"
         android:layout_width="215dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/custom_input"
-        android:ems="10"
-        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/About_NgoEmail"
-        app:layout_constraintTop_toBottomOf="@id/About_NgoPhoneInput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="@+id/About_NgoPhoneInput"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/About_NgoPhoneInput"
+        app:layout_constraintTop_toBottomOf="@+id/update_phone"
+        app:layout_constraintVertical_bias="0.169" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -190,4 +193,64 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profileimage" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/update_address"
+        android:layout_width="120dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background3"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textCapSentences"
+        android:textAlignment="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Edit Address"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/About_NgoAddressInput" />
+
+    <Button
+        android:id="@+id/update_about"
+        android:layout_width="120dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background3"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textCapSentences"
+        android:textAlignment="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Edit Bio"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/About_NgoAboutInput" />
+
+    <Button
+        android:id="@+id/update_phone"
+        android:layout_width="120dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background3"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textCapSentences"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Edit Phone No."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/About_NgoPhoneInput"
+        app:layout_constraintStart_toStartOf="@+id/About_NgoPhoneInput"
+        app:layout_constraintTop_toBottomOf="@+id/About_NgoPhoneInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
