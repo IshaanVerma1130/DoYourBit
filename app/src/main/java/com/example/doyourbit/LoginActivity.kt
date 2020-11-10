@@ -47,7 +47,6 @@ class LoginActivity : AppCompatActivity() {
             val login = findViewById<Button>(R.id.Login_button)
             login.setOnClickListener {
 
-
                 val email = Login_user_email.text.toString()
                 val password = Login_user_pass.text.toString()
 
@@ -85,10 +84,11 @@ class LoginActivity : AppCompatActivity() {
 
                                         sp.edit().putString("type", "ngo").apply()
                                         sp.edit().putBoolean("logged", true).apply()
+                                        sp.edit().putString("n_id", body.getString("n_id")).apply()
                                         sp.edit().putString("n_name", body.getString("n_name")).apply()
                                         sp.edit().putString("n_address", body.getString("address")).apply()
+                                        sp.edit().putString("n_phone", body.getString("phone")).apply()
                                         sp.edit().putString("n_about", body.getString("about")).apply()
-                                        sp.edit().putString("n_id", body.getString("n_id")).apply()
 
                                         val intent =
                                             Intent(applicationContext, CategoryNGO::class.java)
