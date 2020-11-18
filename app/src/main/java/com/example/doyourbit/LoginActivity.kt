@@ -89,6 +89,7 @@ class LoginActivity : AppCompatActivity() {
                                         sp.edit().putString("n_address", body.getString("address")).apply()
                                         sp.edit().putString("n_phone", body.getString("phone")).apply()
                                         sp.edit().putString("n_about", body.getString("about")).apply()
+                                        sp.edit().putString("n_email", body.getString("n_email")).apply()
 
                                         val intent =
                                             Intent(applicationContext, CategoryNGO::class.java)
