@@ -13,8 +13,9 @@
 
     <TextView
         android:id="@+id/About_NgoName"
-        android:layout_width="290dp"
+        android:layout_width="0dp"
         android:layout_height="39dp"
+        android:layout_marginStart="4dp"
         android:background="#40D3C5"
         android:fontFamily="@font/roboto_slab_bold"
         android:text="Name"
@@ -32,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custom_input"
-        android:hapticFeedbackEnabled="false"
+        android:textAlignment="center"
         android:maxLines="1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -80,6 +81,7 @@
         android:background="@drawable/custom_input"
         android:maxLines="3"
         android:paddingLeft="10dp"
+        android:paddingBottom="4dp"
         android:paddingRight="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +97,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/custom_input"
+        android:paddingBottom="4dp"
         android:fontFamily="sans-serif"
         android:maxLines="6"
         android:paddingLeft="10dp"
@@ -175,6 +178,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/custom_input"
+        android:paddingBottom="4dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="20sp"
@@ -187,8 +191,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="105dp"
+        android:layout_height="113dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profileimage" />

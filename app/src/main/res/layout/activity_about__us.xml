@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".About_Us">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout1"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:includeFontPadding="true"
+            android:layout_margin="8dp"
+            android:text="About Us"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="50sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DoYourBit is a small Donation app start-up based in Delhi NCR.\n\nOur aim is to make the app experience pleasing and affordable to the users, we created DoYourBit in that spirit.\n\nDoYourBit is a free app for willing donors to find NGO’s.It offers the donor a catalogue of name of NGO’s from where they can pick the suitable one for them.\n\nWe built the DoYourBit app in 2020 and we are the first app offering this kind of service.\n\nWe will also work hard to improve our tools and app for the user, by improving the app UI, and making the app as simple as possible.\n\nWe will also bring the location feature for the donor in the future to make it easy to find the NGO nearest to them.\n\nWe also give NGO’s and donors choice from which they can select the four categories to request or donate from.This feature makes our app unique from any other donation application.\n\nWe are proud to launch our unique and newest app.Not only has it been designed to meet high level expectations in terms of a donation app for NGO’s, but it will also help the donors to find the NGO’s easily without worrying and finding the right one to give their left overs. We offer many more features in our app andwe hope wou will have a nice experience too.\n\n"
+            android:layout_margin="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal"/>
+
+    </LinearLayout>
+
+</ScrollView>
